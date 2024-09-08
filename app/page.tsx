@@ -8,11 +8,6 @@ import Projects from "@/components/Projects";
 import Videos from "@/components/Videos";
 import ContactMe from "@/components/ContactMe";
 
-const metadata = {
-  title: "Yatharth Verma",
-  description: "Yatharth Verma's portfolio",
-};
-
 const Meteors = dynamic(() => import("@/components/magicui/meteors"), {
   ssr: false,
 });

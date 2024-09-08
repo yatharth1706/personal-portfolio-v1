@@ -101,7 +101,7 @@ const DATA = {
 
 export function CustomDock() {
   const { resolvedTheme, setTheme } = useTheme();
-  const [isMobile, setIsMobile] = useState(window.innerWidth < 1050);
+  const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
     const handleResize = () => setIsMobile(window.innerWidth < 1050);

@@ -2,7 +2,13 @@
 
 import React, { PropsWithChildren, useRef } from "react";
 import { cva, type VariantProps } from "class-variance-authority";
-import { motion, useMotionValue, useSpring, useTransform } from "framer-motion";
+import {
+  motion,
+  MotionValue,
+  useMotionValue,
+  useSpring,
+  useTransform,
+} from "framer-motion";
 
 import { cn } from "@/lib/utils";
 
@@ -96,14 +102,12 @@ export interface DockIconProps {
 }
 
 const DockIcon = ({
-  size,
   magnification = DEFAULT_MAGNIFICATION,
   distance = DEFAULT_DISTANCE,
   mouseX,
   mouseY,
   className,
   children,
-  orientation = "horizontal",
   ...props
 }: DockIconProps) => {
   const ref = useRef<HTMLDivElement>(null);
@@ -120,25 +124,25 @@ const DockIcon = ({
     return val - bounds.x - bounds.width / 2;
   });
 
-  let heightSync = useTransform(
+  const heightSync = useTransform(
     distanceHeightCalc,
     [-distance, 0, distance],
     [40, magnification, 40]
   );
 
-  let widthSync = useTransform(
+  const widthSync = useTransform(
     distanceWidthCalc,
     [-distance, 0, distance],
     [40, magnification, 40]
   );
 
-  let height = useSpring(heightSync, {
+  const height = useSpring(heightSync, {
     mass: 0.1,
     stiffness: 150,
     damping: 12,
   });
 
-  let width = useSpring(widthSync, {
+  const width = useSpring(widthSync, {
     mass: 0.1,
     stiffness: 150,
     damping: 12,
