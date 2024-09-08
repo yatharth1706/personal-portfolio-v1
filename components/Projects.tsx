@@ -69,7 +69,10 @@ function Projects() {
       <h1 className="text-2xl font-bold">Projects</h1>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
         {projectsData.map((project, index) => (
-          <div key={index} className="flex flex-col border rounded-md">
+          <div
+            key={index}
+            className="flex flex-col border rounded-md dark:border-gray-700"
+          >
             <video
               src={project.previewVideo}
               autoPlay
@@ -79,7 +82,9 @@ function Projects() {
             />
             <div className="flex flex-col gap-3 p-4 grow">
               <h2 className="text-xl font-bold">{project.title}</h2>
-              <p className="text-sm text-gray-500">{project.description}</p>
+              <p className="text-sm text-gray-500 dark:text-gray-400">
+                {project.description}
+              </p>
               <div className="flex flex-wrap gap-[4px]">
                 {project.technologies.map((technology, index) => (
                   <span

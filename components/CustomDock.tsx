@@ -1,3 +1,5 @@
+"use client";
+
 import React from "react";
 import Link from "next/link";
 import { CalendarIcon, HomeIcon, MailIcon, PencilIcon } from "lucide-react";
@@ -13,6 +15,7 @@ import {
 } from "@/components/ui/tooltip";
 import { Dock, DockIcon } from "@/components/magicui/dock";
 import { Moon, Sun } from "lucide-react";
+import { useTheme } from "next-themes";
 
 export type IconProps = React.HTMLAttributes<SVGElement>;
 
@@ -101,6 +104,8 @@ export function CustomDock({
 }: {
   orientation: "horizontal" | "vertical";
 }) {
+  const { resolvedTheme, setTheme } = useTheme();
+
   return (
     <div className="h-full flex items-center">
       <TooltipProvider>
@@ -146,13 +151,26 @@ export function CustomDock({
               </Tooltip>
             </DockIcon>
           ))}
-          {/* <Separator className="w-full my-2" />
+          <Separator className="w-full my-2" />
           <DockIcon>
             <Tooltip>
               <TooltipTrigger asChild>
-                <Button variant="ghost" size="icon">
-                  <Sun className="h-[1.2rem] w-[1.2rem] rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
-                  <Moon className="absolute h-[1.2rem] w-[1.2rem] rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
+                <Button
+                  variant="ghost"
+                  size="icon"
+                  className="size-12 rounded-full flex items-center justify-center"
+                >
+                  {resolvedTheme === "light" ? (
+                    <Moon
+                      className="h-[1.2rem] w-[1.2rem] "
+                      onClick={() => setTheme("dark")}
+                    />
+                  ) : (
+                    <Sun
+                      className="h-[1.2rem] w-[1.2rem] "
+                      onClick={() => setTheme("light")}
+                    />
+                  )}
                   <span className="sr-only">Toggle theme</span>
                 </Button>
               </TooltipTrigger>
@@ -160,7 +178,7 @@ export function CustomDock({
                 <p>Theme</p>
               </TooltipContent>
             </Tooltip>
-          </DockIcon> */}
+          </DockIcon>
         </Dock>
       </TooltipProvider>
     </div>

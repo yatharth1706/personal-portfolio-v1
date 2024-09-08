@@ -40,7 +40,7 @@ function Videos() {
         {videos.map((video) => (
           <div
             key={video.videoId}
-            className="flex flex-col gap-2 w-full border rounded-md"
+            className="flex flex-col gap-2 w-full border rounded-md dark:border-gray-700"
           >
             <iframe
               width="100%"
@@ -52,7 +52,9 @@ function Videos() {
             ></iframe>
             <div className="flex flex-col gap-2 p-4">
               <h2 className="text-xl font-bold">{video.title}</h2>
-              <p className="text-sm text-gray-500">{video.description}</p>
+              <p className="text-sm text-gray-500 dark:text-gray-400">
+                {video.description}
+              </p>
             </div>
           </div>
         ))}
