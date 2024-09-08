@@ -146,7 +146,7 @@ export function CustomDock({
               </Tooltip>
             </DockIcon>
           ))}
-          <Separator className="w-full my-2" />
+          {/* <Separator className="w-full my-2" />
           <DockIcon>
             <Tooltip>
               <TooltipTrigger asChild>
@@ -160,7 +160,7 @@ export function CustomDock({
                 <p>Theme</p>
               </TooltipContent>
             </Tooltip>
-          </DockIcon>
+          </DockIcon> */}
         </Dock>
       </TooltipProvider>
     </div>
