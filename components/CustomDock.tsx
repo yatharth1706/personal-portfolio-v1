@@ -101,10 +101,14 @@ const DATA = {
 
 export function CustomDock() {
   const { resolvedTheme, setTheme } = useTheme();
-  const [isMobile, setIsMobile] = useState(false);
+  const [isMobile, setIsMobile] = useState(true);
 
+  console.log("asdf");
   useEffect(() => {
-    const handleResize = () => setIsMobile(window.innerWidth < 1050);
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 1050);
+    };
+    handleResize();
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
   }, []);
