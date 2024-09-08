@@ -19,7 +19,7 @@ const DEFAULT_MAGNIFICATION = 60;
 const DEFAULT_DISTANCE = 140;
 
 const dockVariants = cva(
-  "mx-auto w-max mt-8 h-max p-2 flex gap-2 rounded-2xl border border-slate-200 supports-backdrop-blur:bg-white/10 supports-backdrop-blur:dark:bg-black/10 backdrop-blur-md dark:border-slate-800"
+  "mx-auto w-max mt-8 h-max p-2 flex gap-2 rounded-2xl border border-slate-300 supports-backdrop-blur:bg-white/10 supports-backdrop-blur:dark:bg-black/10 backdrop-blur-md dark:border-slate-800"
 );
 
 const Dock = React.forwardRef<HTMLDivElement, DockProps>(
@@ -95,13 +95,13 @@ const DockIcon = ({
     return val - bounds.y - bounds.height / 3;
   });
 
-  let widthSync = useTransform(
+  let heightSync = useTransform(
     distanceCalc,
     [-distance, 0, distance],
     [40, magnification, 40]
   );
 
-  let width = useSpring(widthSync, {
+  let height = useSpring(heightSync, {
     mass: 0.1,
     stiffness: 150,
     damping: 12,
@@ -110,7 +110,7 @@ const DockIcon = ({
   return (
     <motion.div
       ref={ref}
-      style={{ width }}
+      style={{ height }}
       className={cn(
         "flex aspect-square cursor-pointer items-center justify-center rounded-full",
         className
