@@ -103,7 +103,6 @@ export function CustomDock() {
   const { resolvedTheme, setTheme } = useTheme();
   const [isMobile, setIsMobile] = useState(true);
 
-  console.log("asdf");
   useEffect(() => {
     const handleResize = () => {
       setIsMobile(window.innerWidth < 1050);
@@ -118,7 +117,7 @@ export function CustomDock() {
       className={
         !isMobile
           ? "fixed left-40 top-0 bottom-0 w-24 flex items-center"
-          : "fixed bottom-10 left-1/2 transform -translate-x-1/2 flex items-center"
+          : "fixed bottom-4 left-1/2 transform -translate-x-1/2 flex items-center"
       }
     >
       <TooltipProvider>
