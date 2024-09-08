@@ -63,29 +63,34 @@ const Icons = {
 const DATA = {
   navbar: [
     { href: "#", icon: HomeIcon, label: "Home" },
-    { href: "#", icon: PencilIcon, label: "Blog" },
+    { href: "https://blog.yatharthverma.dev", icon: PencilIcon, label: "Blog" },
   ],
   contact: {
     social: {
       GitHub: {
         name: "GitHub",
-        url: "#",
+        url: "https://github.com/yatharth1706",
         icon: Icons.github,
       },
       LinkedIn: {
         name: "LinkedIn",
-        url: "#",
+        url: "https://www.linkedin.com/in/yatharth-verma-938924169/",
         icon: Icons.linkedin,
       },
       X: {
         name: "X",
-        url: "#",
+        url: "https://x.com/yatharth170699",
         icon: Icons.x,
       },
       email: {
         name: "Send Email",
-        url: "#",
+        url: "mailto:yatharthverma070@gmail.com",
         icon: Icons.email,
+      },
+      youtube: {
+        name: "YouTube",
+        url: "https://www.youtube.com/c/YatharthVerma",
+        icon: Icons.youtube,
       },
     },
   },

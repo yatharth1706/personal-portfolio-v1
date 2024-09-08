@@ -9,6 +9,7 @@ import Education from "@/components/Education";
 import Skills from "@/components/Skills";
 import Projects from "@/components/Projects";
 import Videos from "@/components/Videos";
+import ContactMe from "@/components/ContactMe";
 
 const Meteors = dynamic(() => import("@/components/magicui/meteors"), {
   ssr: false,
@@ -21,17 +22,13 @@ export default function Home() {
         <CustomDock orientation="vertical" />
       </div>
       <Intro />
-      <Meteors number={20} />
-      <DotPattern
-        className={cn(
-          "[mask-image:radial-gradient(300px_circle_at_center,white,transparent)]"
-        )}
-      />
       <WorkExperience />
       <Education />
       <Skills />
       <Projects />
       <Videos />
+      <ContactMe />
+      <Meteors number={20} />
     </main>
   );
 }
