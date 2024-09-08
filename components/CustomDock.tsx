@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Link from "next/link";
 import { CalendarIcon, HomeIcon, MailIcon, PencilIcon } from "lucide-react";
 
@@ -80,17 +80,17 @@ const DATA = {
         url: "https://www.linkedin.com/in/yatharth-verma-938924169/",
         icon: Icons.linkedin,
       },
-      X: {
+      Twitter: {
         name: "X",
         url: "https://x.com/yatharth170699",
         icon: Icons.x,
       },
-      email: {
+      Email: {
         name: "Send Email",
         url: "mailto:yatharthverma070@gmail.com",
         icon: Icons.email,
       },
-      youtube: {
+      Youtube: {
         name: "YouTube",
         url: "https://www.youtube.com/c/YatharthVerma",
         icon: Icons.youtube,
@@ -99,17 +99,29 @@ const DATA = {
   },
 };
 
-export function CustomDock({
-  orientation,
-}: {
-  orientation: "horizontal" | "vertical";
-}) {
+export function CustomDock() {
   const { resolvedTheme, setTheme } = useTheme();
+  const [isMobile, setIsMobile] = useState(window.innerWidth < 1050);
+
+  useEffect(() => {
+    const handleResize = () => setIsMobile(window.innerWidth < 1050);
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
   return (
-    <div className="h-full flex items-center">
+    <div
+      className={
+        !isMobile
+          ? "fixed left-40 top-0 bottom-0 w-24 flex items-center"
+          : "fixed bottom-10 left-1/2 transform -translate-x-1/2 flex items-center"
+      }
+    >
       <TooltipProvider>
-        <Dock direction="middle" orientation={orientation}>
+        <Dock
+          direction="middle"
+          orientation={isMobile ? "horizontal" : "vertical"}
+        >
           {DATA.navbar.map((item) => (
             <DockIcon key={item.label}>
               <Tooltip>
@@ -130,7 +142,7 @@ export function CustomDock({
               </Tooltip>
             </DockIcon>
           ))}
-          <Separator className="w-full my-2" />
+          <Separator orientation={!isMobile ? "horizontal" : "vertical"} />
           {Object.entries(DATA.contact.social).map(([name, social]) => (
             <DockIcon key={name}>
               <Tooltip>
@@ -151,7 +163,7 @@ export function CustomDock({
               </Tooltip>
             </DockIcon>
           ))}
-          <Separator className="w-full my-2" />
+          <Separator orientation={!isMobile ? "horizontal" : "vertical"} />
           <DockIcon>
             <Tooltip>
               <TooltipTrigger asChild>

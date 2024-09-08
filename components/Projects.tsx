@@ -19,23 +19,6 @@ const projectsData = [
     ],
   },
   {
-    title: "BlogBuddy",
-    description:
-      "BlogBuddy is a platform that allows users to create and share blogs with their friends.",
-    link: "https://blog-buddy.vercel.app/",
-    code: "https://github.com/yatharth1706/BlogBuddy",
-    previewVideo: "/videos/BlogBuddyPreview.mp4",
-    technologies: [
-      "Next.js",
-      "React",
-      "MongoDB",
-      "Express",
-      "Node.js",
-      "TypeScript",
-      "Tailwind CSS",
-    ],
-  },
-  {
     title: "EmojiGit CLI Tool",
     description:
       "EmojiGit is a CLI tool that allows you to add emojis to your git commits.",
@@ -51,6 +34,23 @@ const projectsData = [
     link: "https://cloudspace.vercel.app/",
     code: "https://github.com/yatharth1706/CloudSpace",
     previewVideo: "/videos/CloudSpacePreview.mp4",
+    technologies: [
+      "Next.js",
+      "React",
+      "MongoDB",
+      "Express",
+      "Node.js",
+      "TypeScript",
+      "Tailwind CSS",
+    ],
+  },
+  {
+    title: "BlogBuddy",
+    description:
+      "BlogBuddy is a platform that allows users to create and share blogs with their friends.",
+    link: "https://blog-buddy.vercel.app/",
+    code: "https://github.com/yatharth1706/BlogBuddy",
+    previewVideo: "/videos/BlogBuddyPreview.mp4",
     technologies: [
       "Next.js",
       "React",

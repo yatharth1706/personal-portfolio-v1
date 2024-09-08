@@ -1,4 +1,13 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-  
+
+@layer utilities {
+  .fade-bottom {
+    background: linear-gradient(to bottom, transparent 90%, black 100%);
+  }
+
+  .light-mode-fade-bottom {
+    background: linear-gradient(to bottom, transparent 95%, white 100%);
+  }
+}

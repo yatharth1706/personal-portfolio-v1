@@ -28,7 +28,7 @@ const EducationData: EducationItem[] = [
 
 const Education: React.FC = () => {
   return (
-    <div className="flex flex-col gap-4 w-full">
+    <div className="flex flex-col gap-4 w-full -z-10">
       <h1 className="text-2xl font-bold">Education</h1>
 
       <ol className="relative border-s border-gray-200 dark:border-gray-700">

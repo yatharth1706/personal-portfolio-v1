@@ -3,8 +3,8 @@ import ProfilePic from "@/app/images/yatharth.png";
 
 export default function Intro() {
   return (
-    <div className="z-10 w-full flex gap-14 justify-between">
-      <div className="flex flex-col gap-2 w-4/5">
+    <div className="w-full flex flex-col-reverse lg:flex-row gap-14 justify-between items-center -z-10">
+      <div className="flex flex-col gap-2 w-full lg:w-4/5">
         <h1 className="text-4xl font-bold mb-4">Hi! I'm Yatharth.</h1>
         <p className="text-base text-gray-800 dark:text-gray-300">
           Seasoned Fullstack Engineer with 4+ years in startups. I excel in
@@ -13,7 +13,7 @@ export default function Intro() {
           knack for system design and scalability.
         </p>
       </div>
-      <div className="flex items-center justify-center">
+      <div className="flex items-center justify-center md:mb-0">
         <Image
           src={ProfilePic}
           alt="Yatharth"
