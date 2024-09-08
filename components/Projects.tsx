@@ -31,8 +31,8 @@ const projectsData = [
     title: "CloudSpace",
     description:
       "CloudSpace is a platform that allows users to create and share spaces with their friends.",
-    link: "https://cloudspace.vercel.app/",
-    code: "https://github.com/yatharth1706/CloudSpace",
+    link: "https://cloud-space.vercel.app/",
+    code: "https://github.com/yatharth1706/Cloud-Space",
     previewVideo: "/videos/CloudSpacePreview.mp4",
     technologies: [
       "Next.js",
@@ -48,7 +48,7 @@ const projectsData = [
     title: "BlogBuddy",
     description:
       "BlogBuddy is a platform that allows users to create and share blogs with their friends.",
-    link: "https://blog-buddy.vercel.app/",
+    link: "https://blog-buddy-seven.vercel.app/",
     code: "https://github.com/yatharth1706/BlogBuddy",
     previewVideo: "/videos/BlogBuddyPreview.mp4",
     technologies: [
