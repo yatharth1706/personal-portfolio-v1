@@ -1,10 +1,6 @@
 ## My Personal Portfolio
 
-
-
-https://github.com/user-attachments/assets/f70be5e7-3d17-41e1-96af-9ab7960ae166
-
-
+https://github.com/user-attachments/assets/dd50eb73-7993-406a-97a1-6ac42b1c8592
 
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
