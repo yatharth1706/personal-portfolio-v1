@@ -60,9 +60,9 @@ const Dock = React.forwardRef<HTMLDivElement, DockProps>(
         ref={ref}
         onMouseMove={(e) => {
           if (orientation == "horizontal") {
-            mouseX.set(e.pageX);
+            mouseX.set(e.clientX);
           } else {
-            mouseY.set(e.pageY);
+            mouseY.set(e.clientY);
           }
         }}
         onMouseLeave={() => {
