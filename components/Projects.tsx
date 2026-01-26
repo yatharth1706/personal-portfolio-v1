@@ -4,6 +4,21 @@ import { Button } from "./ui/button";
 
 const projectsData = [
   {
+    title: "Invoice Generator",
+    description:
+      "A minimalistic invoice generator built and vibe coded with Claude Code. Fully open source, no auth required, no paywall. Export invoices to PDF and share with clients. Supports light and dark modes.",
+    link: "https://invoice-generator-two-psi.vercel.app/",
+    code: "https://github.com/yatharth1706/invoice-generator",
+    previewVideo: "/videos/Invoice generator.mp4",
+    technologies: [
+      "Vite",
+      "React",
+      "TypeScript",
+      "Tailwind CSS",
+      "Claude Code",
+    ],
+  },
+  {
     title: "FormVibe",
     description:
       "FormVibe is a platform that allows users to create and share forms with their friends.",

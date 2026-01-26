@@ -17,7 +17,13 @@ const workExperienceData: WorkExperienceItem[] = [
     companyName: "Topo",
     jobTitle: "Senior Software Engineer",
     description: [
-      "Building AI SDRs and training them to help sales teams close deals faster.",
+      "Spearheaded platform-wide UI redesign, delivering a modern, intuitive interface that boosted user satisfaction and reduced support tickets.",
+      "Designed and launched end-to-end campaign creation flow, streamlining onboarding and slashing setup time for new campaigns.",
+      "Built automatic phone-number enrichment, integrating third-party APIs to append contact data in real time and improve lead quality.",
+      "Architected a notification system (Email & Slack) to surface key events instantly, increasing engagement and response rates.",
+      "Led HubSpot CRM integration, enabling seamless two-way data sync and 360° engagement tracking.",
+      "Released Master Inbox, empowering users to view and reply to all lead conversations in one place, driving workflow efficiency.",
+      "Engineered dynamic AI-driven messaging snippets using prompt engineering, personalizing outreach at scale and boosting open rates.",
     ],
   },
   {
@@ -76,7 +82,7 @@ const WorkExperience: React.FC = () => {
               {item.jobTitle} at {item.companyName}
             </h3>
             <div className="mb-4 text-base font-normal text-gray-700 dark:text-gray-400">
-              <ul>
+              <ul className="list-disc list-outside ml-5 space-y-1">
                 {item.description.map((desc, index) => (
                   <li key={index}>{desc}</li>
                 ))}
