@@ -63,10 +63,10 @@ const workExperienceData: WorkExperienceItem[] = [
 
 const WorkExperience: React.FC = () => {
   return (
-    <div className="flex flex-col gap-4 w-full -z-10">
-      <h1 className="text-2xl font-bold">Work Experience</h1>
+    <div className="flex w-full flex-col gap-4 -z-10">
+      <h2 className="section-title">Work Experience</h2>
 
-      <ol className="relative border-s border-gray-200 dark:border-gray-700">
+      <ol className="relative border-s border-slate-200 dark:border-slate-700">
         {workExperienceData.map((item, index) => (
           <li
             key={index}
@@ -74,20 +74,28 @@ const WorkExperience: React.FC = () => {
               index === workExperienceData.length - 1 ? "mb-0" : ""
             }`}
           >
-            <div className="absolute w-3 h-3 bg-gray-200 rounded-full mt-1.5 -start-1.5 border border-white dark:border-gray-900 dark:bg-gray-700"></div>
-            <time className="mb-1 text-sm font-normal leading-none text-gray-400 dark:text-gray-500">
+            <div className="absolute mt-1.5 h-3 w-3 -start-1.5 rounded-full border border-white bg-slate-200 dark:border-slate-900 dark:bg-slate-700"></div>
+            <time className="mb-1 text-sm font-normal leading-none text-slate-500 dark:text-slate-400">
               {item.startDate} - {item.endDate || "Present"}
             </time>
-            <h3 className="text-lg font-semibold text-gray-900 dark:text-white">
+            <h3 className="text-lg font-semibold text-slate-900 dark:text-slate-100">
               {item.jobTitle} at {item.companyName}
             </h3>
-            <div className="mb-4 text-base font-normal text-gray-700 dark:text-gray-400">
-              <ul className="list-disc list-outside ml-5 space-y-1">
-                {item.description.map((desc, index) => (
-                  <li key={index}>{desc}</li>
-                ))}
-              </ul>
-            </div>
+            <details
+              open={index === 0}
+              className="mb-4 mt-2 rounded-lg border border-slate-200/80 p-3 dark:border-slate-700/80"
+            >
+              <summary className="cursor-pointer text-sm font-semibold text-slate-700 dark:text-slate-200">
+                View highlights
+              </summary>
+              <div className="mt-3 text-base font-normal text-slate-700 dark:text-slate-300">
+                <ul className="ml-5 list-outside list-disc space-y-1">
+                  {item.description.map((desc, innerIndex) => (
+                    <li key={innerIndex}>{desc}</li>
+                  ))}
+                </ul>
+              </div>
+            </details>
             {item.companyLink && (
               <a
                 href={item.companyLink}

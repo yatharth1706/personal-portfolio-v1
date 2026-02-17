@@ -80,41 +80,42 @@ const projectsData = [
 
 function Projects() {
   return (
-    <div className="flex flex-col gap-4 w-full">
-      <h1 className="text-2xl font-bold">Projects</h1>
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+    <div className="flex w-full flex-col gap-4">
+      <h2 className="section-title">Projects</h2>
+      <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
         {projectsData.map((project, index) => (
           <div
             key={index}
-            className="flex flex-col border rounded-md dark:border-gray-700"
+            className="section-card flex flex-col overflow-hidden"
           >
             <video
               src={project.previewVideo}
-              autoPlay
+              controls
               muted
-              loop
-              className="rounded-t-md"
+              preload="metadata"
+              playsInline
+              className="aspect-video w-full"
+              aria-label={`${project.title} project preview`}
             />
-            <div className="flex flex-col gap-3 p-4 grow">
-              <h2 className="text-xl font-bold">{project.title}</h2>
-              <p className="text-sm text-gray-500 dark:text-gray-400">
+            <div className="flex grow flex-col gap-3 p-4">
+              <h3 className="text-xl font-bold text-slate-900 dark:text-slate-100">
+                {project.title}
+              </h3>
+              <p className="muted-copy">
                 {project.description}
               </p>
-              <div className="flex flex-wrap gap-[4px]">
-                {project.technologies.map((technology, index) => (
-                  <span
-                    key={index}
-                    className="bg-slate-100 text-gray-800 text-sm font-medium me-2 px-2.5 py-0.5 rounded dark:bg-gray-700 dark:text-gray-300"
-                  >
+              <div className="flex flex-wrap gap-2">
+                {project.technologies.map((technology) => (
+                  <span key={technology} className="chip">
                     {technology}
                   </span>
                 ))}
               </div>
               <div className="flex gap-2 mt-auto">
-                <Link href={project.link}>
+                <Link href={project.link} target="_blank" rel="noreferrer">
                   <Button variant="default">View</Button>
                 </Link>
-                <Link href={project.code}>
+                <Link href={project.code} target="_blank" rel="noreferrer">
                   <Button variant="outline">Code</Button>
                 </Link>
               </div>

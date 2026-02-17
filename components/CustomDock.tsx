@@ -2,7 +2,16 @@
 
 import React, { useEffect, useState } from "react";
 import Link from "next/link";
-import { CalendarIcon, HomeIcon, MailIcon, PencilIcon } from "lucide-react";
+import {
+  BriefcaseIcon,
+  Code2Icon,
+  FolderGit2Icon,
+  GraduationCapIcon,
+  HomeIcon,
+  MailIcon,
+  PencilIcon,
+  VideoIcon,
+} from "lucide-react";
 
 import { cn } from "@/lib/utils";
 import { Button, buttonVariants } from "@/components/ui/button";
@@ -20,7 +29,6 @@ import { useTheme } from "next-themes";
 export type IconProps = React.HTMLAttributes<SVGElement>;
 
 const Icons = {
-  calendar: (props: IconProps) => <CalendarIcon {...props} />,
   email: (props: IconProps) => <MailIcon {...props} />,
   linkedin: (props: IconProps) => (
     <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" {...props}>
@@ -65,8 +73,23 @@ const Icons = {
 
 const DATA = {
   navbar: [
-    { href: "#", icon: HomeIcon, label: "Home" },
-    { href: "https://blog.yatharthverma.dev", icon: PencilIcon, label: "Blog" },
+    { href: "#home", icon: HomeIcon, label: "Home" },
+    { href: "#experience", icon: BriefcaseIcon, label: "Experience" },
+    { href: "#education", icon: GraduationCapIcon, label: "Education" },
+    { href: "#projects", icon: FolderGit2Icon, label: "Projects" },
+    {
+      href: "#machine-coding",
+      icon: Code2Icon,
+      label: "Machine Coding",
+    },
+    { href: "#videos", icon: VideoIcon, label: "Videos" },
+    { href: "#contact", icon: MailIcon, label: "Contact" },
+    {
+      href: "https://blog.yatharthverma.dev",
+      icon: PencilIcon,
+      label: "Blog",
+      external: true,
+    },
   ],
   contact: {
     social: {
@@ -116,85 +139,93 @@ export function CustomDock() {
     <div
       className={
         !isMobile
-          ? "fixed left-40 top-0 bottom-0 w-24 flex items-center"
-          : "fixed bottom-4 left-1/2 transform -translate-x-1/2 flex items-center"
+          ? "fixed left-6 top-1/2 z-20 flex -translate-y-1/2 items-center"
+          : "fixed inset-x-0 bottom-3 z-20 px-2"
       }
     >
       <TooltipProvider>
-        <Dock
-          direction="middle"
-          orientation={isMobile ? "horizontal" : "vertical"}
+        <div
+          className={
+            isMobile
+              ? "mx-auto w-full overflow-x-auto pb-[max(env(safe-area-inset-bottom),0px)] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
+              : ""
+          }
         >
-          {DATA.navbar.map((item) => (
-            <DockIcon key={item.label}>
+          <Dock
+            direction="middle"
+            orientation={isMobile ? "horizontal" : "vertical"}
+            className={isMobile ? "mx-auto min-w-max" : ""}
+          >
+            {DATA.navbar.map((item) => (
+              <DockIcon key={item.label}>
+                <Tooltip>
+                  <TooltipTrigger asChild>
+                    <Link
+                      href={item.href}
+                      target={item.external ? "_blank" : undefined}
+                      rel={item.external ? "noreferrer" : undefined}
+                      className={cn(
+                        buttonVariants({ variant: "ghost", size: "icon" }),
+                        "size-12 rounded-full"
+                      )}
+                    >
+                      <item.icon className="size-4" />
+                    </Link>
+                  </TooltipTrigger>
+                  <TooltipContent side={isMobile ? "top" : "right"}>
+                    <p>{item.label}</p>
+                  </TooltipContent>
+                </Tooltip>
+              </DockIcon>
+            ))}
+            <Separator orientation={!isMobile ? "horizontal" : "vertical"} />
+            {Object.entries(DATA.contact.social).map(([name, social]) => (
+              <DockIcon key={name}>
+                <Tooltip>
+                  <TooltipTrigger asChild>
+                    <Link
+                      href={social.url}
+                      className={cn(
+                        buttonVariants({ variant: "ghost", size: "icon" }),
+                        "size-12 rounded-full"
+                      )}
+                    >
+                      <social.icon className="size-4" />
+                    </Link>
+                  </TooltipTrigger>
+                  <TooltipContent side={isMobile ? "top" : "right"}>
+                    <p>{name}</p>
+                  </TooltipContent>
+                </Tooltip>
+              </DockIcon>
+            ))}
+            <Separator orientation={!isMobile ? "horizontal" : "vertical"} />
+            <DockIcon>
               <Tooltip>
                 <TooltipTrigger asChild>
-                  <Link
-                    href={item.href}
-                    className={cn(
-                      buttonVariants({ variant: "ghost", size: "icon" }),
-                      "size-12 rounded-full"
-                    )}
+                  <Button
+                    variant="ghost"
+                    size="icon"
+                    className="size-12 rounded-full flex items-center justify-center"
+                    onClick={() =>
+                      setTheme(resolvedTheme === "light" ? "dark" : "light")
+                    }
                   >
-                    <item.icon className="size-4" />
-                  </Link>
+                    {resolvedTheme === "light" ? (
+                      <Moon className="h-[1.2rem] w-[1.2rem] " />
+                    ) : (
+                      <Sun className="h-[1.2rem] w-[1.2rem] " />
+                    )}
+                    <span className="sr-only">Toggle theme</span>
+                  </Button>
                 </TooltipTrigger>
-                <TooltipContent side="right">
-                  <p>{item.label}</p>
+                <TooltipContent side={isMobile ? "top" : "right"}>
+                  <p>Theme</p>
                 </TooltipContent>
               </Tooltip>
             </DockIcon>
-          ))}
-          <Separator orientation={!isMobile ? "horizontal" : "vertical"} />
-          {Object.entries(DATA.contact.social).map(([name, social]) => (
-            <DockIcon key={name}>
-              <Tooltip>
-                <TooltipTrigger asChild>
-                  <Link
-                    href={social.url}
-                    className={cn(
-                      buttonVariants({ variant: "ghost", size: "icon" }),
-                      "size-12 rounded-full"
-                    )}
-                  >
-                    <social.icon className="size-4" />
-                  </Link>
-                </TooltipTrigger>
-                <TooltipContent side="right">
-                  <p>{name}</p>
-                </TooltipContent>
-              </Tooltip>
-            </DockIcon>
-          ))}
-          <Separator orientation={!isMobile ? "horizontal" : "vertical"} />
-          <DockIcon>
-            <Tooltip>
-              <TooltipTrigger asChild>
-                <Button
-                  variant="ghost"
-                  size="icon"
-                  className="size-12 rounded-full flex items-center justify-center"
-                >
-                  {resolvedTheme === "light" ? (
-                    <Moon
-                      className="h-[1.2rem] w-[1.2rem] "
-                      onClick={() => setTheme("dark")}
-                    />
-                  ) : (
-                    <Sun
-                      className="h-[1.2rem] w-[1.2rem] "
-                      onClick={() => setTheme("light")}
-                    />
-                  )}
-                  <span className="sr-only">Toggle theme</span>
-                </Button>
-              </TooltipTrigger>
-              <TooltipContent side="right">
-                <p>Theme</p>
-              </TooltipContent>
-            </Tooltip>
-          </DockIcon>
-        </Dock>
+          </Dock>
+        </div>
       </TooltipProvider>
     </div>
   );

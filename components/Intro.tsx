@@ -1,17 +1,31 @@
 import Image from "next/image";
+import Link from "next/link";
 import ProfilePic from "@/app/images/yatharth.png";
+import { Button } from "./ui/button";
 
 export default function Intro() {
   return (
-    <div className="w-full flex flex-col-reverse lg:flex-row gap-14 justify-between items-center -z-10">
-      <div className="flex flex-col gap-2 w-full lg:w-4/5">
-        <h1 className="text-4xl font-bold mb-4">Hi! I&apos;m Yatharth.</h1>
-        <p className="text-base text-gray-800 dark:text-gray-300">
-          Seasoned Fullstack Engineer with 4+ years in startups. I excel in
-          building applications from scratch to production-ready. My expertise
-          spans across frontend, backend, and full-stack development, with a
-          knack for system design and scalability.
+    <div className="section-card -z-10 flex w-full flex-col-reverse items-center justify-between gap-10 p-6 lg:flex-row">
+      <div className="flex w-full flex-col gap-3 lg:w-4/5">
+        <h1 className="text-4xl font-bold tracking-tight text-slate-900 dark:text-slate-50">
+          Hi! I&apos;m Yatharth.
+        </h1>
+        <p className="text-base leading-7 text-slate-700 dark:text-slate-300">
+          Full-stack engineer with 4+ years across startup environments, focused
+          on shipping performant products from idea to production.
         </p>
+        <p className="muted-copy">
+          I work across frontend, backend, and platform layers with a strong
+          emphasis on UX quality, maintainability, and scalable architecture.
+        </p>
+        <div className="mt-3 flex flex-wrap gap-2">
+          <Link href="#projects">
+            <Button>View Projects</Button>
+          </Link>
+          <Link href="#contact">
+            <Button variant="outline">Contact Me</Button>
+          </Link>
+        </div>
       </div>
       <div className="flex items-center justify-center md:mb-0">
         <Image
@@ -19,7 +33,8 @@ export default function Intro() {
           alt="Yatharth"
           width={160}
           height={160}
-          className="border-2 border-gray-100 rounded-full object-cover"
+          className="rounded-full border-2 border-slate-200 object-cover dark:border-slate-700"
+          priority
         />
       </div>
     </div>

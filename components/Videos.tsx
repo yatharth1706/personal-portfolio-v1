@@ -26,33 +26,41 @@ const videos = [
 
 function Videos() {
   return (
-    <div className="flex flex-col gap-4 w-full">
+    <div className="flex w-full flex-col gap-4">
       <div className="flex flex-row justify-between items-center">
-        <h1 className="text-2xl font-bold">Videos</h1>
-        <Link href="https://www.youtube.com/c/YatharthVerma" target="_blank">
+        <h2 className="section-title">Videos</h2>
+        <Link
+          href="https://www.youtube.com/c/YatharthVerma"
+          target="_blank"
+          rel="noreferrer"
+        >
           <Button variant="outline" className="w-fit">
             YouTube
             <BsYoutube className="w-4 h-4 ml-2" />
           </Button>
         </Link>
       </div>
-      <div className="flex flex-col gap-8 w-full">
+      <div className="flex w-full flex-col gap-8">
         {videos.map((video) => (
           <div
             key={video.videoId}
-            className="flex flex-col gap-2 w-full border rounded-md dark:border-gray-700"
+            className="section-card flex w-full flex-col gap-2 overflow-hidden"
           >
             <iframe
+              title={video.title}
               width="100%"
               height="415"
               src={`https://www.youtube.com/embed/${video.videoId}`}
+              loading="lazy"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
               allowFullScreen
               className="rounded-t-md"
             ></iframe>
             <div className="flex flex-col gap-2 p-4">
-              <h2 className="text-xl font-bold">{video.title}</h2>
-              <p className="text-sm text-gray-500 dark:text-gray-400">
+              <h3 className="text-xl font-bold text-slate-900 dark:text-slate-100">
+                {video.title}
+              </h3>
+              <p className="muted-copy">
                 {video.description}
               </p>
             </div>
