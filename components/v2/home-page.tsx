@@ -456,8 +456,8 @@ export function HomePage() {
         <div className="flex flex-wrap gap-[clamp(14px,2vw,20px)]">
           <LookCard
             kicker="Role"
-            title="Senior · Staff · Founding engineer"
-            copy="I want to own a system on a small team."
+            title="Senior or founding engineer"
+            copy="I want to own a feature all the way through. Small team or a bigger one is fine."
           />
           <LookCard
             kicker="Focus"
