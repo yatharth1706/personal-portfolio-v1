@@ -46,6 +46,8 @@ export default function OpenGraphImage() {
         <div style={{ display: "flex", flexDirection: "column", gap: 18 }}>
           <div
             style={{
+              display: "flex",
+              flexDirection: "column",
               fontSize: 58,
               fontWeight: 700,
               lineHeight: 1.05,
@@ -53,8 +55,8 @@ export default function OpenGraphImage() {
               maxWidth: 920,
             }}
           >
-            I build the systems
-            <span style={{ color: "#7B848F" }}> behind the product.</span>
+            <div>I build the systems</div>
+            <div style={{ color: "#7B848F" }}>behind the product.</div>
           </div>
           <div style={{ fontSize: 26, color: "#A8B0B8", maxWidth: 820, lineHeight: 1.4 }}>
             Full-stack. Currently at Topo (YC W24). Previously Artisan AI (YC W24) and LeadSquared.
