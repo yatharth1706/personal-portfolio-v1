@@ -179,6 +179,16 @@ html[data-v2-theme="light"]:has(.v2-root) {
   }
 }
 
+.animate-caret {
+  animation: blink 1.05s steps(1, end) infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-caret {
+    animation: none;
+  }
+}
+
 .animate-glow {
   animation: glowPulse 3.4s ease-in-out infinite;
 }
