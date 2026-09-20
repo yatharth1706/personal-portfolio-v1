@@ -51,13 +51,13 @@ export const CASE_STUDIES = [
       { label: "YC W24", tone: "neutral" as const },
       { label: "Live", tone: "live" as const },
     ],
-    title: "HubSpot CRM sync",
+    title: "HubSpot integration",
     constraint:
-      "Customers already live in HubSpot. Activity has to show up there. A closed deal has to stop the sequence in Topo. Owners can't be different people on each side.",
-    built: "Outbound sync for leads, companies, and activity. Webhooks to exclude contacts and pause sequences. Bidirectional owner sync. Reconciliation you can run again if a job dies.",
-    holds:
-      "50–100K+ leads a day, 200+ customers.",
-    tags: ["Python", "FastAPI", "PostgreSQL", "Webhooks", "HubSpot API"],
+      "Sales already lives in HubSpot. Outreach runs in Topo. If a deal closes or a company becomes an opportunity, Topo has to stop chasing them — without missing HubSpot's webhooks when they arrive in a burst.",
+    built:
+      "Temporal jobs push leads, companies, and activity into HubSpot. HubSpot webhooks come back the other way — deal closed or lifecycle to opportunity becomes a meeting in Topo, and we stop reaching out to that company. Idempotency, retries, and burst handling for those webhooks. Owner sync both ways.",
+    holds: "50–100K+ leads a day across 200+ customers.",
+    tags: ["Python", "FastAPI", "Temporal", "PostgreSQL", "Webhooks", "HubSpot API"],
   },
   {
     number: "02",
@@ -129,7 +129,7 @@ export const EXPERIENCE = [
     location: "Paris, France · Remote",
     title: "Senior Software Engineer",
     points: [
-      "Designed the HubSpot sync for 200+ customers — 50–100K leads a day. Leads, companies, and activity go out to HubSpot; webhooks come back to pause sequences; owners stay in sync both ways.",
+      "Built the HubSpot integration for 200+ customers — 50–100K leads a day. Temporal jobs push leads, companies, and activity into HubSpot; webhooks pull deal and lifecycle changes back so we stop outreach; owners sync both ways.",
       "Built the daily sales workspace: email, calls, and LinkedIn in one queue. 10–20K tasks a day, with assignment, reminders, bulk actions, and CRM writeback.",
       "Built Temporal workflows for HubSpot dynamic lists — customers link a list, we import the leads, then pause, resume, detach, and recover when a run fails halfway.",
       "Scaled outbound to 20–40K emails a day, and added sequence analytics and sending-health so a bad day is visible.",

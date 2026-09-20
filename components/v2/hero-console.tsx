@@ -8,9 +8,9 @@ const COMMANDS = [
     id: "sync",
     label: "crm-sync",
     lines: [
-      { text: "$ sync run --entity contacts", tone: "fog" },
-      { text: "→ Topo → HubSpot · leads, companies, activity", tone: "dim" },
-      { text: "→ webhooks · pause sequences, exclude contacts", tone: "dim" },
+      { text: "$ hubspot sync --customer active", tone: "fog" },
+      { text: "→ push · leads, companies, activity → HubSpot", tone: "dim" },
+      { text: "→ webhook · deal closed → stop outreach", tone: "dim" },
       { text: "→ owners · both directions", tone: "dim" },
       { text: "→ ", accent: "50–100K", suffix: " leads / day ✓", tone: "ok" },
     ],

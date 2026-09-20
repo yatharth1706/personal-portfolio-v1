@@ -169,30 +169,30 @@ export function HomePage() {
               </span>
             </div>
             <h3 className="mb-[clamp(12px,1.8vw,16px)] max-w-[24ch] text-[clamp(1.5rem,3vw,2.3rem)] font-bold leading-[1.08] tracking-[-0.035em]">
-              HubSpot CRM sync
+              HubSpot integration
             </h3>
             <p className="mb-[clamp(22px,3vw,30px)] max-w-[56ch] text-[clamp(1rem,1.4vw,1.1875rem)] leading-[1.55] text-mute">
-              Leads, companies, and activity go Topo → HubSpot. HubSpot writes
-              back through webhooks to pause outreach. Owners are the piece
-              that syncs both ways.
+              Customers connect HubSpot so leads, companies, and activity from
+              Topo show up in their CRM — and so a closed deal in HubSpot
+              stops outreach in Topo.
             </p>
             <div className="flex flex-wrap gap-[clamp(20px,2.6vw,34px)]">
               <WorkCol
                 label="Constraint"
-                copy="Customers already live in HubSpot. Activity has to show up there. A closed deal has to stop the sequence in Topo. Owners can't be different people on each side."
+                copy="Sales already lives in HubSpot. Outreach runs in Topo. If a deal closes or a company becomes an opportunity, Topo has to stop chasing them — without missing HubSpot's webhooks when they arrive in a burst."
               />
               <WorkCol
                 label="Built"
-                copy="Outbound sync for leads, companies, and activity. Webhooks to exclude contacts and pause sequences. Bidirectional owner sync. Reconciliation you can run again if a job dies."
+                copy="Temporal jobs push leads, companies, and activity into HubSpot. HubSpot webhooks come back the other way — deal closed or lifecycle to opportunity becomes a meeting in Topo, and we stop reaching out to that company. Idempotency, retries, and burst handling for those webhooks. Owner sync both ways."
               />
               <WorkCol
                 label="Holds"
-                copy="50–100K+ leads a day, 200+ customers."
+                copy="50–100K+ leads a day across 200+ customers."
               />
             </div>
             <SyncDiagram />
             <div className="mt-[clamp(22px,3vw,30px)] flex flex-wrap gap-2 border-t border-inset pt-[clamp(18px,2.4vw,24px)]">
-              {["Python", "FastAPI", "PostgreSQL", "Webhooks"].map(
+              {["Python", "FastAPI", "Temporal", "PostgreSQL", "Webhooks"].map(
                 (tag) => (
                   <Tag key={tag}>{tag}</Tag>
                 )
@@ -549,10 +549,10 @@ function SyncDiagram() {
     <div className="mt-[clamp(22px,3vw,30px)] rounded-xl border border-rail bg-surface">
       <div className="flex flex-wrap justify-between gap-2.5 border-b border-inset px-3.5 py-2.5">
         <span className="font-mono text-[10.5px] uppercase tracking-[0.06em] text-dim">
-          How Topo talks to HubSpot
+          Topo ↔ HubSpot
         </span>
         <span className="font-mono text-[10.5px] uppercase tracking-[0.06em] text-accent">
-          Owners both ways
+          Temporal + webhooks
         </span>
       </div>
       <div className="flex flex-wrap gap-[clamp(10px,2vw,18px)] p-[clamp(16px,2.2vw,22px)]">
@@ -601,13 +601,16 @@ function SyncDiagram() {
         </div>
       </div>
       <div className="flex flex-wrap gap-x-[18px] gap-y-2 border-t border-inset px-3.5 py-2.5">
-        {["Leads", "Companies", "Activity", "Owners"].map((item) => (
+        {["Leads → CRM", "Companies → CRM", "Activity → CRM"].map((item) => (
           <span key={item} className="font-mono text-[10px] uppercase tracking-[0.05em] text-dim">
             {item}
           </span>
         ))}
         <span className="font-mono text-[10px] uppercase tracking-[0.05em] text-accent">
-          Webhooks
+          Deal closed → stop outreach
+        </span>
+        <span className="font-mono text-[10px] uppercase tracking-[0.05em] text-accent">
+          Owners both ways
         </span>
       </div>
     </div>
