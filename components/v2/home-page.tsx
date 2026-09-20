@@ -172,9 +172,10 @@ export function HomePage() {
               HubSpot integration
             </h3>
             <p className="mb-[clamp(22px,3vw,30px)] max-w-[56ch] text-[clamp(1rem,1.4vw,1.1875rem)] leading-[1.55] text-mute">
-              Customers connect HubSpot so their CRM and Topo stay in
-              step — activity goes out, and closed deals come back so we
-              don&apos;t keep emailing people who already converted.
+              Customers connect their HubSpot account to Topo. From there we
+              sync leads, companies, and activity into HubSpot, and we react
+              when something changes on the HubSpot side — like a deal
+              closing — so Topo stops reaching out.
             </p>
             <div className="flex flex-wrap gap-[clamp(20px,2.6vw,34px)]">
               <WorkCol
