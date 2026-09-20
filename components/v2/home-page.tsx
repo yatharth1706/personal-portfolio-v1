@@ -172,22 +172,22 @@ export function HomePage() {
               HubSpot integration
             </h3>
             <p className="mb-[clamp(22px,3vw,30px)] max-w-[56ch] text-[clamp(1rem,1.4vw,1.1875rem)] leading-[1.55] text-mute">
-              Customers connect HubSpot so leads, companies, and activity from
-              Topo show up in their CRM — and so a closed deal in HubSpot
-              stops outreach in Topo.
+              Customers connect HubSpot so their CRM and Topo stay in
+              step — activity goes out, and closed deals come back so we
+              don&apos;t keep emailing people who already converted.
             </p>
             <div className="flex flex-wrap gap-[clamp(20px,2.6vw,34px)]">
               <WorkCol
-                label="Constraint"
-                copy="Sales already lives in HubSpot. Outreach runs in Topo. If a deal closes or a company becomes an opportunity, Topo has to stop chasing them — without missing HubSpot's webhooks when they arrive in a burst."
+                label="Problem"
+                copy="Customers run sales in HubSpot and outreach in Topo. They need activity from Topo to land in HubSpot, and if a deal closes or a company moves to opportunity in HubSpot, Topo has to stop reaching out."
               />
               <WorkCol
-                label="Built"
-                copy="Temporal jobs push leads, companies, and activity into HubSpot. HubSpot webhooks come back the other way — deal closed or lifecycle to opportunity becomes a meeting in Topo, and we stop reaching out to that company. Idempotency, retries, and burst handling for those webhooks. Owner sync both ways."
+                label="What I built"
+                copy="Temporal workflows that push leads, companies, and activity into HubSpot. Webhooks the other way — when HubSpot says a deal closed or the lifecycle changed, we record a meeting in Topo and exclude that company from more outreach. The webhook path handles duplicates, retries, and bursts. Later I added owner sync so the same person owns the record on both sides."
               />
               <WorkCol
-                label="Holds"
-                copy="50–100K+ leads a day across 200+ customers."
+                label="Scale"
+                copy="Runs for 200+ customers, about 50–100K leads a day."
               />
             </div>
             <SyncDiagram />
