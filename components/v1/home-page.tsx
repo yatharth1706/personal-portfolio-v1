@@ -270,17 +270,22 @@ export function HomePage() {
           </div>
           <div className="min-w-0 flex-[1_1_min(100%,420px)]">
             <h2 className="mb-[clamp(22px,3vw,30px)] mt-0 max-w-[26ch] text-[clamp(1.65rem,3.4vw,2.7rem)] font-bold leading-[1.05] tracking-[-0.03em]">
-              I&apos;ve shipped this at three companies
+              Hi, I&apos;m Yatharth
             </h2>
             <p className="mb-[18px] mt-0 max-w-[58ch] text-[clamp(1rem,1.2vw,1.125rem)] leading-[1.7] text-ink-copy">
-              A sync that has to survive a webhook storm. A job you can pause
-              and resume after someone edits the record in another tab. Email
-              that actually arrives. That&apos;s the work I look for.
+              I&apos;m a full-stack engineer. Most of my work sits between the
+              product people use and the systems that have to keep running —
+              CRM integrations, background jobs, email that has to land, and the
+              infra underneath.
             </p>
             <p className="mb-[18px] mt-0 max-w-[58ch] text-[clamp(1rem,1.2vw,1.125rem)] leading-[1.7] text-ink-copy">
-              LeadSquared in Bangalore, Artisan in San Francisco, Topo in Paris.
-              I&apos;m used to owning a feature all the way through — UI, API,
-              and the jobs behind it.
+              I&apos;ve done this at LeadSquared in Bangalore, Artisan AI in San
+              Francisco, and Topo in Paris. At each one I&apos;ve usually owned
+              a feature end to end: the UI, the API, and the jobs behind it.
+            </p>
+            <p className="mb-[18px] mt-0 max-w-[58ch] text-[clamp(1rem,1.2vw,1.125rem)] leading-[1.7] text-ink-copy">
+              I&apos;m based in India, open to senior or founding roles, and
+              happy to talk if that sounds useful.
             </p>
             <div className="mt-[clamp(26px,3.4vw,36px)] grid grid-cols-[repeat(auto-fit,minmax(min(100%,200px),1fr))] gap-[22px] border-t border-line pt-[clamp(24px,3vw,30px)]">
               <div>

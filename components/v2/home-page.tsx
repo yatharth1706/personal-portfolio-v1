@@ -368,17 +368,23 @@ export function HomePage() {
           <div className="min-w-0 flex-[1_1_min(100%,400px)]">
             <Badge>About</Badge>
             <h2 className="mb-[clamp(16px,2.2vw,22px)] mt-[clamp(18px,2.6vw,26px)] max-w-[24ch] text-[clamp(1.7rem,3.4vw,2.5rem)] font-bold leading-[1.07] tracking-[-0.035em]">
-              I&apos;ve shipped this at three companies
+              Hi, I&apos;m Yatharth
             </h2>
             <p className="mb-4 max-w-[58ch] text-[clamp(1rem,1.2vw,1.0625rem)] leading-[1.7] text-mute">
-              A sync that has to survive a webhook storm. A job you can pause
-              and resume after someone edits the record in another tab. Email
-              that actually arrives. That&apos;s the work I look for.
+              I&apos;m a full-stack engineer. Most of my work sits between the
+              product people use and the systems that have to keep running —
+              CRM integrations, background jobs, email that has to land,
+              and the infra underneath.
+            </p>
+            <p className="mb-4 max-w-[58ch] text-[clamp(1rem,1.2vw,1.0625rem)] leading-[1.7] text-mute">
+              I&apos;ve done this at LeadSquared in Bangalore, Artisan AI in
+              San Francisco, and Topo in Paris. At each one I&apos;ve usually
+              owned a feature end to end: the UI, the API, and the jobs behind
+              it.
             </p>
             <p className="max-w-[58ch] text-[clamp(1rem,1.2vw,1.0625rem)] leading-[1.7] text-mute">
-              LeadSquared in Bangalore, Artisan in San Francisco, Topo in Paris.
-              I&apos;m used to owning a feature all the way through — UI, API,
-              and the jobs behind it.
+              I&apos;m based in India, open to senior or founding roles, and
+              happy to talk if that sounds useful.
             </p>
             <div className="mt-[clamp(24px,3.4vw,32px)] flex flex-wrap gap-[clamp(18px,3vw,40px)] border-t border-inset pt-[clamp(20px,2.6vw,26px)]">
               <div className="flex-[0_1_260px]">
