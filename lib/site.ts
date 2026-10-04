@@ -3,7 +3,7 @@ export const SITE = {
   role: "Senior Software Engineer",
   email: "yatharthverma070@gmail.com",
   phone: "+91 70188 38466",
-  resume: "/YatharthVerma_Resume_2026_v3.pdf",
+  resume: "/YatharthVerma_Resume_2026_v4.pdf",
   github: "https://github.com/yatharth1706",
   linkedin: "https://www.linkedin.com/in/yatharth-verma-938924169/",
   youtube: "https://www.youtube.com/@yatharthverma",
@@ -125,7 +125,7 @@ export const EXPERIENCE = [
   {
     company: "Topo",
     yc: true,
-    dates: "Aug 2024 — Present",
+    dates: "Aug 2024 — Sep 2026",
     location: "Paris, France · Remote",
     title: "Senior Software Engineer",
     points: [

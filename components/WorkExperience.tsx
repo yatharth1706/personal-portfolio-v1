@@ -13,7 +13,7 @@ interface WorkExperienceItem {
 const workExperienceData: WorkExperienceItem[] = [
   {
     startDate: "August 2024",
-    endDate: "Present",
+    endDate: "September 2026",
     companyName: "Topo",
     jobTitle: "Senior Software Engineer",
     description: [

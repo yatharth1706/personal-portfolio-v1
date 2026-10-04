@@ -80,7 +80,7 @@ export function HomePage() {
             </h1>
             <p className="mt-[clamp(16px,2.6vw,24px)] max-w-[54ch] text-[clamp(0.975rem,1.2vw,1.125rem)] leading-[1.65] text-mute">
               Five years on the UI, the APIs, and the jobs that have to keep
-              running. Currently at Topo (YC W24). Before that, Artisan AI
+              running. Most recently at Topo (YC W24). Before that, Artisan AI
               (YC W24) and LeadSquared. I usually own a feature all the way
               through, and most of it is still in production.
             </p>
@@ -143,7 +143,7 @@ export function HomePage() {
           eyebrow="Proof"
           title="A few numbers"
           accent="from production."
-          copy="Daily volume on systems I still work on at Topo, plus deliverability at Artisan."
+          copy="Daily volume on systems I built at Topo, plus deliverability at Artisan."
         />
         <ProofStats />
       </section>
@@ -404,7 +404,7 @@ export function HomePage() {
                   Teaching
                 </div>
                 <div className="text-[14.5px] leading-[1.6]">
-                  3.6K+ subscribers on YouTube
+                  3.2K+ subscribers on YouTube
                   <br />
                   <span className="text-dim">Redis internals</span>
                 </div>
@@ -480,7 +480,7 @@ export function HomePage() {
             kicker="Status"
             title="Open to conversations"
             green
-            copy="I'm at Topo. Happy to talk even if neither of us is sure yet."
+            copy="I left Topo in September 2026 and I'm looking for what's next. Happy to talk even if neither of us is sure yet."
           />
         </div>
       </section>
@@ -835,7 +835,7 @@ function ResumeCard() {
           YatharthVerma_Resume.pdf
         </span>
         <span className="ml-auto rounded-full border border-line px-2 py-0.5 font-mono text-[10px] uppercase tracking-[0.06em] text-dim">
-          2 pages
+          1 page
         </span>
       </div>
       <div className="bg-white p-[clamp(24px,4vw,52px)] text-[#16181B]">
@@ -845,25 +845,33 @@ function ResumeCard() {
               Yatharth Verma
             </div>
             <div className="mt-1.5 text-[14.5px] font-semibold text-[#454C55]">
-              Senior Software Engineer
+              Senior Software Engineer · Backend / Full Stack
             </div>
             <div className="mt-2.5 font-mono text-[11.5px] leading-[1.8] text-[#6B7280]">
-              yatharthverma070@gmail.com · +91 70188 38466
+              Punjab, India · yatharthverma070@gmail.com · +91 70188 38466
               <br />
-              yatharthverma.dev · GitHub · LinkedIn · YouTube (3.6K+)
+              yatharthverma.dev · GitHub · LinkedIn · YouTube (3.2K+)
             </div>
           </div>
+          <ResumeH>Summary</ResumeH>
+          <p className="mb-7 text-[13.5px] leading-[1.6] text-[#454C55]">
+            Senior backend/full stack engineer with 5+ years building high-volume
+            CRM integrations, outbound email systems, and fault-tolerant workflows
+            in Python and TypeScript. Ships production LLM features inside core
+            sales workflows.
+          </p>
           <ResumeH>Experience</ResumeH>
           <ResumeJob
             company="Topo"
-            dates="Aug 2024 — Present · Paris, France (Remote)"
+            dates="Aug 2024 — Sep 2026 · Paris, France (Remote)"
             title="Senior Software Engineer"
             bullets={[
-              "Designed and evolved CRM integration architecture for a platform serving 200+ customers and processing 50K–100K+ leads daily — bidirectional HubSpot sync with entity-level source-of-truth semantics, webhook-driven updates, conflict resolution, customisable mappings and lifecycle-safe reconciliation.",
-              "Built the Tasks and Daily Sales Workflow: a unified multi-channel workspace processing 10K–20K tasks/day across email, calls and LinkedIn, with CRM sync, assignment pools, reminders, bulk actions and AI-generated reply drafts.",
-              "Engineered reliable asynchronous workflows with Temporal for CRM-backed dynamic lists — reconciliation, pause/resume/detach lifecycles, external state changes and failure recovery.",
-              "Scaled high-volume outbound to 20K–40K emails/day, building sequence analytics and sending-health diagnostics while improving lead-management performance through pagination, indexing, query optimisation and caching.",
-              "Embedded AI into core sales workflows: AI-generated messaging, email drafts and lead-specific call assistance.",
+              "One of 3–4 engineers reporting directly to the CTO; wrote technical specs for new features, finalized designs in CTO review, and owned delivery from design to production.",
+              "Owned bidirectional HubSpot sync for 200+ customers (50K–100K leads/day), with async webhook processing, per-entity source-of-truth rules, and conflict resolution. Cut sync failure rate from ~5–10% to near zero with 1–5s CRM-to-Topo latency, and virtually eliminated sync-related support tickets.",
+              "Led design and full stack build (FastAPI, Next.js) of the Tasks & Daily Sales Workflow, a unified email, call and LinkedIn workspace used daily by 800–1,000 sales reps (10K–20K tasks/day). Replaced separate inbox, lead approval and to-do flows, so reps reliably follow up on replies and approvals.",
+              "Built fault-tolerant Temporal workflows running long-lived CRM sync for 200+ customers and absorbing bulk webhook bursts of up to 10K owner-sync workflows, with pause/resume/detach lifecycles and automatic recovery from failures and external CRM changes.",
+              "Scaled outbound infrastructure to 20K–40K emails/day and built sequence analytics and sending-health diagnostics. Brought lead-management load times under 0.6s via pagination, indexing, query optimization and caching.",
+              "Shipped LLM-powered reply drafts and call icebreakers inside reps' daily workflow, generating ~50K per week across customers.",
             ]}
           />
           <ResumeJob
@@ -871,58 +879,43 @@ function ResumeCard() {
             dates="Dec 2023 — Aug 2024 · San Francisco, CA (Remote)"
             title="Senior Software Engineer"
             bullets={[
-              "Improved email deliverability from 50% to 95% by optimising sending, email quality and filtering systems.",
-              "Engineered and hardened the email scheduler to reliably process 10K+ emails/day.",
-              "Built analytics infrastructure for real-time tracking of lead and email activity.",
-              "Redesigned the subscription and billing workflow with Stripe, rebuilding the end-to-end lifecycle.",
-              "Built CRM integrations for HubSpot and Salesforce, enabling lead sync and engagement workflows.",
+              "Raised email deliverability from 50% to 95% by overhauling sending logic, email quality checks, and filtering.",
+              "Hardened the email scheduler to reliably process 10K+ emails/day for automated outbound campaigns.",
+              "Built real-time analytics for lead and email activity, giving customers and the team visibility into campaign performance.",
+              "Rebuilt the end-to-end subscription and billing lifecycle on Stripe, reducing manual billing fixes and support requests.",
+              "Built HubSpot and Salesforce integrations for lead sync and engagement workflows.",
             ]}
           />
           <ResumeJob
             company="LeadSquared"
             dates="Jun 2021 — Dec 2023 · Bangalore, India"
-            title="Software Engineer → Senior Software Engineer"
+            title="Senior Software Engineer (promoted from Software Engineer)"
             bullets={[
-              "Automated the production release process and regional infrastructure provisioning, reducing manual DevOps effort.",
-              "Engineered automated RDS upgrade workflows, reducing database upgrade downtime to 2–3 minutes.",
-              "Built internal developer/DevOps tooling for controlled database access, approval workflows, notifications and scheduled log reporting across clusters and regions.",
-              "Improved performance of high-traffic product workflows, optimising Advanced Search through caching and backend improvements.",
+              "Automated production releases (CI/CD) and regional infrastructure provisioning, replacing manual DevOps steps with faster, repeatable deployments.",
+              "Automated RDS upgrade workflows, reducing database upgrade downtime to 2–3 minutes and eliminating recurring manual work for the DevOps team.",
+              "Built internal DevOps tooling for controlled database access, approval workflows, notifications, and scheduled log reporting across clusters, regions and environments.",
+              "Sped up Advanced Search, a high-traffic product workflow, through caching and backend optimizations.",
             ]}
           />
           <div className="mt-7">
             <ResumeH>Skills</ResumeH>
             <SkillLine label="Languages" value="Python · TypeScript · JavaScript · SQL" />
-            <SkillLine label="Backend" value="FastAPI · Node.js · PostgreSQL · Redis · SQLAlchemy · RabbitMQ" />
-            <SkillLine label="Distributed systems" value="Temporal · asynchronous workflows · webhooks · event-driven systems" />
+            <SkillLine label="Backend" value="FastAPI · Node.js · REST APIs · SQLAlchemy · RabbitMQ" />
+            <SkillLine label="Databases & search" value="PostgreSQL · MySQL · Redis · Elasticsearch" />
+            <SkillLine label="Distributed systems" value="Temporal · event-driven architecture · webhooks · async processing" />
             <SkillLine label="Frontend" value="React · Next.js · Tailwind CSS" />
-            <SkillLine label="Infrastructure" value="AWS · Docker · Terraform · Render · Doppler" />
-            <SkillLine label="Observability" value="Datadog · logging · metrics · distributed tracing" />
-            <SkillLine label="AI & integrations" value="LLM APIs · prompt engineering · HubSpot · Salesforce · Stripe" />
+            <SkillLine label="Infra & observability" value="AWS · Docker · Terraform · CI/CD · Datadog (metrics, distributed tracing)" />
+            <SkillLine label="AI & integrations" value="LLM APIs (OpenAI, Anthropic, Gemini) · HubSpot · Salesforce · Stripe" />
           </div>
-          <div className="mt-7 flex flex-wrap gap-[clamp(20px,4vw,44px)]">
-            <div className="min-w-0 flex-[1_1_min(100%,240px)]">
-              <ResumeH>Education</ResumeH>
-              <div className="text-[14.5px] font-bold">Lovely Professional University</div>
-              <div className="mt-1 text-[13.5px] leading-[1.6] text-[#454C55]">
-                B.Tech, Computer Science &amp; Engineering
-                <br />
-                <span className="text-[#6B7280]">
-                  Jalandhar, India · CGPA 9.0/10 · 2017–2021
-                </span>
-              </div>
-            </div>
-            <div className="min-w-0 flex-[1_1_min(100%,240px)]">
-              <ResumeH>Open source</ResumeH>
-              <div className="text-[13.5px] leading-[1.6] text-[#454C55]">
-                <strong className="text-[#16181B]">FormVibe</strong> — a
-                Typeform/Airtable alternative. Drag-and-drop form builder focused
-                on developer experience, built for the Appwrite Hackathon, with
-                contributions to the Appwrite Console frontend.
-              </div>
-              <div className="mt-2.5 text-[13.5px] leading-[1.6] text-[#454C55]">
-                <strong className="text-[#16181B]">LinkFree</strong> — contributed
-                the project&apos;s playground feature.
-              </div>
+          <div className="mt-7">
+            <ResumeH>Education</ResumeH>
+            <div className="text-[14.5px] font-bold">Lovely Professional University</div>
+            <div className="mt-1 text-[13.5px] leading-[1.6] text-[#454C55]">
+              B.Tech, Computer Science &amp; Engineering
+              <br />
+              <span className="text-[#6B7280]">
+                Jalandhar, India · CGPA 9.0/10 · 2017–2021
+              </span>
             </div>
           </div>
         </div>

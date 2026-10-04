@@ -21,7 +21,7 @@ export function HomePage() {
         <div className="mb-[clamp(26px,4vw,44px)] flex items-center gap-2.5">
           <span className="size-[7px] shrink-0 rounded-full bg-live" />
           <span className="font-mono text-xs uppercase tracking-[0.06em] text-ink-muted">
-            Senior Software Engineer at Topo — open to founder conversations
+            Senior Software Engineer, ex-Topo — open to founder conversations
           </span>
         </div>
 
@@ -34,7 +34,7 @@ export function HomePage() {
         <div className="mt-[clamp(34px,5vw,56px)] grid grid-cols-[repeat(auto-fit,minmax(min(100%,300px),1fr))] items-start gap-[clamp(28px,4vw,56px)]">
           <p className="m-0 max-w-[44ch] text-[clamp(1rem,1.25vw,1.1875rem)] leading-[1.65] text-ink-copy">
             I&apos;m Yatharth Verma — five years on the UI, the APIs, and the
-            jobs that have to keep running. Currently at{" "}
+            jobs that have to keep running. Most recently at{" "}
             <strong className="font-semibold text-ink">Topo</strong>, previously{" "}
             <strong className="font-semibold text-ink">Artisan AI</strong> and{" "}
             <strong className="font-semibold text-ink">LeadSquared</strong>.
@@ -305,7 +305,7 @@ export function HomePage() {
                   Teaching
                 </div>
                 <div className="text-[15.5px] leading-[1.6] text-ink">
-                  3.6K+ subscribers on YouTube
+                  3.2K+ subscribers on YouTube
                   <br />
                   <span className="text-ink-muted">
                   Redis internals

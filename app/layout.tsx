@@ -38,7 +38,7 @@ export const metadata: Metadata = {
     template: "%s · Yatharth Verma",
   },
   description:
-    "Full-stack engineer. UI, APIs, and the jobs that have to keep running. Currently at Topo (YC W24), previously Artisan AI (YC W24) and LeadSquared.",
+    "Full-stack engineer. UI, APIs, and the jobs that have to keep running. Most recently at Topo (YC W24), before that Artisan AI (YC W24) and LeadSquared.",
   applicationName: "Yatharth Verma",
   authors: [{ name: "Yatharth Verma", url: "https://yatharthverma.dev" }],
   creator: "Yatharth Verma",

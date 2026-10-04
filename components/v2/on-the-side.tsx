@@ -111,7 +111,7 @@ export function OnTheSide() {
           rel="noreferrer"
           className="text-sm font-medium text-mute hover:text-fog"
         >
-          3.6K+ on YouTube · the rest of the series →
+          3.2K+ on YouTube · the rest of the series →
         </a>
       </div>
     </section>
