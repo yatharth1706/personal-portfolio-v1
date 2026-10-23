@@ -6,6 +6,6 @@ export default function robots(): MetadataRoute.Robots {
       userAgent: "*",
       allow: "/",
     },
-    sitemap: "https://yatharthverma.dev/sitemap.xml",
+    sitemap: "https://www.yatharthverma.dev/sitemap.xml",
   };
 }

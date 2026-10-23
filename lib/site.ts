@@ -7,7 +7,7 @@ export const SITE = {
   github: "https://github.com/yatharth1706",
   linkedin: "https://www.linkedin.com/in/yatharth-verma-938924169/",
   youtube: "https://www.youtube.com/@yatharthverma",
-  website: "https://yatharthverma.dev",
+  website: "https://www.yatharthverma.dev",
   tricity: {
     live: "https://tricity-rent-nine.vercel.app/",
     repo: "https://github.com/yatharth1706/tricity-rent",

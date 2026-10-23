@@ -32,7 +32,7 @@ const geistMono = localFont({
 const V2_THEME_SCRIPT = `(function(){try{if(localStorage.getItem('v2-theme')==='light')document.documentElement.setAttribute('data-v2-theme','light')}catch(e){}})();`;
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://yatharthverma.dev"),
+  metadataBase: new URL("https://www.yatharthverma.dev"),
   title: {
     default: "Yatharth Verma — Senior Software Engineer",
     template: "%s · Yatharth Verma",
@@ -40,7 +40,7 @@ export const metadata: Metadata = {
   description:
     "Full-stack engineer. UI, APIs, and the jobs that have to keep running. Most recently at Topo (YC W24), before that Artisan AI (YC W24) and LeadSquared.",
   applicationName: "Yatharth Verma",
-  authors: [{ name: "Yatharth Verma", url: "https://yatharthverma.dev" }],
+  authors: [{ name: "Yatharth Verma", url: "https://www.yatharthverma.dev" }],
   creator: "Yatharth Verma",
   keywords: [
     "Yatharth Verma",
@@ -61,7 +61,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://yatharthverma.dev",
+    url: "https://www.yatharthverma.dev",
     siteName: "Yatharth Verma",
     title: "Yatharth Verma — Senior Software Engineer",
     description:
