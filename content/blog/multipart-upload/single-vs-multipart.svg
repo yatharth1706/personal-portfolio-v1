@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 380" width="800" height="380" role="img" aria-label="A single 5 GB upload that fails at 4.8 GB has to start over. A multipart upload of ten 500 MB parts only retries the part that failed.">
+  <!-- Shared diagram styles. Colors come from the site theme when the SVG is
+       inlined in a post; the fallbacks are the dark theme. -->
+  <style>
+    .dg-sans { font-family: var(--font-archivo), Helvetica, Arial, sans-serif; }
+    .dg-mono { font-family: var(--font-jetbrains), ui-monospace, Menlo, monospace; }
+    .dg-fg { fill: var(--v2-fg, #f2f4f6); }
+    .dg-mute { fill: var(--v2-mute, #a8b0b8); }
+    .dg-dim { fill: var(--v2-dim, #7b848f); }
+    .dg-accent { fill: var(--v2-accent, #60a5fa); }
+    .dg-ok { fill: var(--v2-ok, #34d399); }
+    .dg-bad { fill: var(--v2-bad, #f87171); }
+    .dg-rule { stroke: var(--v2-hair, #16191d); }
+    .dg-box { fill: var(--v2-panel, #101214); stroke: var(--v2-line, #23282e); }
+    .dg-box-accent { fill: var(--v2-soft, #0e1b33); stroke: var(--v2-brand-bright, #3b82f6); }
+    .dg-box-ok { fill: var(--v2-panel, #101214); stroke: var(--v2-ok, #34d399); }
+    .dg-box-bad { fill: var(--v2-panel, #101214); stroke: var(--v2-bad, #f87171); stroke-width: 1.5; }
+    .dg-fill-accent { fill: var(--v2-brand-bright, #3b82f6); opacity: 0.85; }
+    .dg-stroke-bad { stroke: var(--v2-bad, #f87171); }
+  </style>
+
+  <!-- Single upload -->
+  <text x="40" y="50" class="dg-mono dg-dim" font-size="12" letter-spacing="1">ONE BIG REQUEST</text>
+  <rect x="40" y="68" width="720" height="34" rx="7" class="dg-box"/>
+  <rect x="40" y="68" width="691" height="34" rx="7" class="dg-fill-accent"/>
+  <text x="56" y="90" class="dg-mono" font-size="12" fill="#ffffff">4.8 GB of 5 GB sent</text>
+  <circle cx="731" cy="85" r="13" class="dg-box-bad"/>
+  <path d="M726 80 L736 90 M736 80 L726 90" class="dg-stroke-bad" stroke-width="2" stroke-linecap="round"/>
+  <text x="40" y="136" class="dg-sans dg-mute" font-size="15">The connection drops at 96%.</text>
+  <text x="40" y="160" class="dg-sans dg-bad" font-size="15" font-weight="600">Start again from zero: all 5 GB.</text>
+
+  <line x1="40" y1="196" x2="760" y2="196" class="dg-rule"/>
+
+  <!-- Multipart upload -->
+  <text x="40" y="236" class="dg-mono dg-dim" font-size="12" letter-spacing="1">TEN 500 MB PARTS</text>
+  <g class="dg-mono" font-size="12" text-anchor="middle">
+    <rect x="40"  y="254" width="66" height="34" rx="7" class="dg-box-ok"/><text x="73"  y="276" class="dg-ok">1 ✓</text>
+    <rect x="113" y="254" width="66" height="34" rx="7" class="dg-box-ok"/><text x="146" y="276" class="dg-ok">2 ✓</text>
+    <rect x="186" y="254" width="66" height="34" rx="7" class="dg-box-ok"/><text x="219" y="276" class="dg-ok">3 ✓</text>
+    <rect x="259" y="254" width="66" height="34" rx="7" class="dg-box-ok"/><text x="292" y="276" class="dg-ok">4 ✓</text>
+    <rect x="332" y="254" width="66" height="34" rx="7" class="dg-box-ok"/><text x="365" y="276" class="dg-ok">5 ✓</text>
+    <rect x="405" y="254" width="66" height="34" rx="7" class="dg-box-ok"/><text x="438" y="276" class="dg-ok">6 ✓</text>
+    <rect x="478" y="254" width="66" height="34" rx="7" class="dg-box-bad"/><text x="511" y="276" class="dg-bad">7 ✕</text>
+    <rect x="551" y="254" width="66" height="34" rx="7" class="dg-box-ok"/><text x="584" y="276" class="dg-ok">8 ✓</text>
+    <rect x="624" y="254" width="66" height="34" rx="7" class="dg-box-ok"/><text x="657" y="276" class="dg-ok">9 ✓</text>
+    <rect x="697" y="254" width="63" height="34" rx="7" class="dg-box-ok"/><text x="728" y="276" class="dg-ok">10 ✓</text>
+  </g>
+  <text x="40" y="322" class="dg-sans dg-mute" font-size="15">Part 7 fails. The other nine are already safe.</text>
+  <text x="40" y="346" class="dg-sans dg-ok" font-size="15" font-weight="600">Retry only part 7: 500 MB.</text>
+</svg>

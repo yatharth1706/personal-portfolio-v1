@@ -5,11 +5,12 @@ import { Menu, X } from "lucide-react";
 import { ThemeToggle } from "./theme-toggle";
 
 const NAV = [
-  { href: "#work", label: "Work" },
-  { href: "#experience", label: "Experience" },
-  { href: "#stack", label: "Stack" },
-  { href: "#looking", label: "Hiring?" },
-  { href: "#resume", label: "Résumé" },
+  { href: "/#work", label: "Work" },
+  { href: "/#experience", label: "Experience" },
+  { href: "/#stack", label: "Stack" },
+  { href: "/#looking", label: "Hiring?" },
+  { href: "/#resume", label: "Résumé" },
+  { href: "/blog", label: "Blog" },
 ];
 
 export function SiteHeader() {
@@ -19,7 +20,7 @@ export function SiteHeader() {
     <header className="v2-header sticky top-0 z-[80] isolate border-b backdrop-blur-[12px]">
       <div className="v2-wrap flex items-center justify-between gap-3 py-3 sm:gap-5 sm:py-[13px]">
         <a
-          href="#top"
+          href="/#top"
           onClick={() => setOpen(false)}
           className="flex min-w-0 items-center gap-2.5 text-fog"
         >
@@ -45,7 +46,7 @@ export function SiteHeader() {
           </nav>
           <ThemeToggle />
           <a
-            href="#contact"
+            href="/#contact"
             className="hidden rounded-full bg-brand px-[17px] py-[9px] text-sm font-semibold text-onbrand transition-colors hover:bg-brand-hover md:inline-flex"
           >
             Let&apos;s talk
@@ -75,7 +76,7 @@ export function SiteHeader() {
             </a>
           ))}
           <a
-            href="#contact"
+            href="/#contact"
             onClick={() => setOpen(false)}
             className="mt-2 inline-flex items-center justify-center rounded-full bg-brand px-4 py-3 text-[15px] font-semibold text-onbrand"
           >

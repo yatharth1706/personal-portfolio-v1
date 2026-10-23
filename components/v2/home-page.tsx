@@ -2,6 +2,7 @@ import Image from "next/image";
 import ProfilePic from "@/app/images/yatharth-about.jpg";
 import { ALSO_SHIPPED, EXPERIENCE, SITE } from "@/lib/site";
 import { HeroConsole } from "./hero-console";
+import { LatestWriting } from "./latest-writing";
 import { LayersDeck } from "./layers-deck";
 import { OnTheSide } from "./on-the-side";
 import { ProofStats } from "./proof-stats";
@@ -415,6 +416,8 @@ export function HomePage() {
       </section>
 
       <OnTheSide />
+
+      <LatestWriting />
 
       <section id="resume" className="v2-wrap scroll-mt-20 pt-[clamp(56px,8vw,108px)]">
         <div className="mx-auto mb-[clamp(28px,4vw,42px)] max-w-[660px] text-center">
