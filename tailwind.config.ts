@@ -1,7 +1,6 @@
 import type { Config } from "tailwindcss"
 
 const config = {
-  darkMode: ["class"],
   content: [
     "./pages/**/*.{ts,tsx}",
     "./components/**/*.{ts,tsx}",
@@ -10,13 +9,6 @@ const config = {
   ],
   prefix: "",
   theme: {
-    container: {
-      center: true,
-      padding: "2rem",
-      screens: {
-        "2xl": "1400px",
-      },
-    },
     extend: {
       fontFamily: {
         sans: ["var(--font-geist-sans)", "ui-sans-serif", "system-ui", "sans-serif"],
@@ -52,46 +44,10 @@ const config = {
         "layer-mid": "var(--v2-layer-mid, #3A434F)",
         "chart-mid": "var(--v2-chart-mid, #2F3A4A)",
         empty: "var(--v2-empty, #1E2429)",
-        ink: {
-          DEFAULT: "#2A2521",
-          muted: "#6B635C",
-          copy: "#4A433D",
-          night: "#241F1B",
-        },
-        paper: "#FAF8F5",
-        rust: {
-          DEFAULT: "#A8461F",
-          bright: "#C1562E",
-        },
-        wash: "#F4F0EA",
-        live: "#3F7A52",
-      },
-      keyframes: {
-        "accordion-down": {
-          from: { height: "0" },
-          to: { height: "var(--radix-accordion-content-height)" },
-        },
-        "accordion-up": {
-          from: { height: "var(--radix-accordion-content-height)" },
-          to: { height: "0" },
-        },
-        meteor: {
-          "0%": { transform: "rotate(215deg) translateX(0)", opacity: "1" },
-          "70%": { opacity: "1" },
-          "100%": {
-            transform: "rotate(215deg) translateX(-500px)",
-            opacity: "0",
-          },
-        },
-      },
-      animation: {
-        "accordion-down": "accordion-down 0.2s ease-out",
-        "accordion-up": "accordion-up 0.2s ease-out",
-        meteor: "meteor 5s linear infinite",
       },
     },
   },
-  plugins: [require("tailwindcss-animate")],
+  plugins: [],
 } satisfies Config;
 
 export default config

@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import { Archivo, JetBrains_Mono } from "next/font/google";
 import localFont from "next/font/local";
 import "./globals.css";
-import { Providers } from "./providers";
 
 const archivo = Archivo({
   subsets: ["latin"],
@@ -88,7 +87,7 @@ export default function RootLayout({
       <body
         className={`${archivo.variable} ${jetbrains.variable} ${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <Providers>{children}</Providers>
+        {children}
       </body>
     </html>
   );

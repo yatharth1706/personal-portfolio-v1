@@ -125,10 +125,6 @@ html[data-v2-theme="light"] .v2-root {
   padding-right: clamp(16px, 4vw, 48px);
 }
 
-.classic-root {
-  font-family: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
-}
-
 html:has(.v2-root) {
   background: #08090a;
   color-scheme: dark;
@@ -242,34 +238,6 @@ html[data-v2-theme="light"] .animate-glow {
 
 .animate-live {
   animation: livePulse 2.2s ease-out infinite;
-}
-
-@layer components {
-  .section-title {
-    @apply text-2xl font-bold tracking-tight text-slate-900 dark:text-slate-50;
-  }
-
-  .muted-copy {
-    @apply text-sm leading-6 text-slate-600 dark:text-slate-300;
-  }
-
-  .section-card {
-    @apply rounded-xl border border-slate-200 bg-white/80 backdrop-blur-sm shadow-sm transition-colors dark:border-slate-800 dark:bg-slate-950/70;
-  }
-
-  .chip {
-    @apply rounded-md border border-slate-200 bg-slate-100 px-2.5 py-1 text-xs font-medium text-slate-700 dark:border-slate-700 dark:bg-slate-800 dark:text-slate-200;
-  }
-}
-
-@layer utilities {
-  .fade-bottom {
-    background: linear-gradient(to bottom, transparent 90%, black 100%);
-  }
-
-  .light-mode-fade-bottom {
-    background: linear-gradient(to bottom, transparent 95%, white 100%);
-  }
 }
 
 /* ------------------------------------------------------------------ */
